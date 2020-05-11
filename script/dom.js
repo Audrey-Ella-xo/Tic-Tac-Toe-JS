@@ -4,7 +4,7 @@ const state = {
     players: [Player(), Player()],
 }
 
-const dom = ( function () {
+export const dom = ( function () {
   
     // render: Menu when number is 1 (default)
     //         Gameplay when number is 2
@@ -184,7 +184,7 @@ const dom = ( function () {
         render(2);
         resetPickedFields();
         // reset the board properties (round counter, role , result and winner)
-        gamePlay.newRound();
+        gamePlay.resetBoard(); 
         renderX_O();
         deleteRenderedResultMessage();
         renderResult();
@@ -216,17 +216,15 @@ const dom = ( function () {
         render(1);
         resetPickedFields();
         // reset the board properties (round counter, role , result and winner)
-        gamePlay.newRound();
+        gamePlay.resetBoard(); 
         deleteRenderedResultMessage();
         startGame();
       })
     }
+// runs the program 
+    const runApp = () => { 
+      startGame(); 
+      playAgain(); newGame(); } 
 
-
-    return { startGame, playAgain, newGame };
+    return { runApp }; 
 })();
-
-// calls
-dom.startGame();
-dom.playAgain();
-dom.newGame(); 
