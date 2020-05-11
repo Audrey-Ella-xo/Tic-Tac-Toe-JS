@@ -1,6 +1,8 @@
 export const gamePlay = (function () {
   const gameBoard = {
-      role: 0
+      role: 0,
+      result: Array(9).fill(null), 
+      round: 1  
   };
 
   // switching roles after every round

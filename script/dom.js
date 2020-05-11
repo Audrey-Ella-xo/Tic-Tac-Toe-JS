@@ -35,26 +35,29 @@ const dom = ( function () {
 
     // gives player1: X since i equal 0 it will read 0.svg which is 'X' image
     //       player2: O
-    const setX_OBackgroudImages = (players) => {
+    const setX_O = (players) => { 
       players.forEach((player, i) => {
-          player.setX_O(`no-repeat url("../image/${i}.svg")`); 
+         // setting X-image for players (since i equal 0 it will read 0.svg which is 'X' image) and O-image for player2 
+         player.setX_OField(`no-repeat url("../image/${i}.svg")`); 
+         // setting 'X' for player1 and 'O' for player2 
+         i ? player.setX_O('O') : player.setX_O('X'); 
       });
     }
 
     const renderX_O = () => {
-        boardField.forEach( field => {
+      setX_O(state.players); boardField.forEach( (field, i) => { 
           field.addEventListener('click', (e) => {
-            setX_OBackgroudImages(state.players);
+
             e.preventDefault();
             // Module gamePlay method call
-            gamePlay.play(field.style, state.players);
-          });
+            gamePlay.play(field.style, state.players, i); }, {once: true}); 
         } );
     }
-    return { render, startGame, renderX_O };
+    const renderResult = () => { boardField.forEach( (field, i) => { field.addEventListener('click', (e) => { e.preventDefault(); if (gamePlay.getWinner() !== undefined) { console.log(gamePlay.getWinner()); setTimeout(function(){ render(3); }, 500); } }, {once: true}); }); } 
+    return { render, startGame, renderX_O, renderResult };
 })();
 
 // calls
 dom.render();
 dom.startGame();
-dom.renderX_O();
+dom.renderResult(); 
