@@ -1,16 +1,12 @@
 import { Player } from './player.js';
 
-const player1 = Player();
-const player2 = Player();
+const state = { players: [Player(), Player()] } 
 
 const dom = ( function () {
     const getPlayersFromDom = (event) => {
-      const players = document.querySelectorAll('.player');
+      inputs = document.querySelectorAll('.player'); 
       event.preventDefault();
-      player1.setUsername(players[0].value);
-      player2.setUsername(players[1].value);
-      console.log(player1.getUsername());
-      console.log(player2.getUsername());
+      inputs.forEach( (input, i) => { state.players[i].setUsername(input.value); console.log(state.players[i].getUsername()); });
     };
 
     // this function render: Menu when number is 1 (default)
