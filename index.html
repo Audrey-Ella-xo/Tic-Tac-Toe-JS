@@ -23,45 +23,45 @@
     </section>
     <section class="game-play">
         <div class="scoreboard">
-            <div>
-                <h2 id="player-1"></h2>
+            <div class="players-scoreboard">
+                <h2 id="player-1-name"></h2>
                 <h4 id="player-1-score"></h4>
             </div>
-            <div>
-                <h2 id="player-2"></h2>
+            <div class="players-scoreboard">
+                <h2 id="player-2-name"></h2>
                 <h4 id="player-2-score"></h4>
             </div>
         </div>
         <table class="game-board">
-            <tbody>
-              <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-              </tr>
-              <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-              </tr>
-            </tbody>
+          <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+          </tbody>
         </table>
     </section>
     <section class="end-result">
       <h3 id="winner"></h3>
       <h1 id="result-message"></h1>
       <div>
-          <button id="new-round"></button>
-          <button id="new-game"></button>
+          <button class="result-btns" id="new-round">Play Again!</button>
+          <button class="result-btns"id="new-game">New Game</button>
       </div>
     </section>
     <script type="module" src="./script/player.js"></script>
     <script type="module" src="./script/gameplay.js"></script>
     <script type="module" src="./script/dom.js"></script>
 </body>
-</html> 
+</html>
