@@ -1,29 +1,39 @@
 export const Player = () => {
-  const player = {fields: [],
+  const player = {
+    fields: [],
     score: 0
   };
 
+  // player username
   const setUsername = (name) => {
       player.username = name;
   }
+
   const getUsername = () => {
       return player.username;
   }
+
+  // stores string that used to set the css backgroud property
   const setX_OField = (x_O) => {
       player.x_OField = x_O;
   }
+
   const getX_OField = () => {
     return player.x_OField;
   }
-  // XorO is 'X': player1
+
+  // Stores  'X': player1
   //         'O': player2
+  // it can be used in case you want add feature for who want to have X/O
   const setX_O = (XorO) => {
     player.x_O = XorO;
   }
+
   const getX_O = () => {
     return player.x_O;
   }
-  // push to array picked fields
+
+  // return an array of picked fields
   const fieldsPick = (lastFieldIndex) => {
     player.fields.push(lastFieldIndex);
     // sorting picks for checks and return it as a string when we have 3 picks
@@ -33,6 +43,7 @@ export const Player = () => {
     }
   }
 
+  // set score in case player won
   const setScore = () => {
     player.score++;
   }
@@ -41,10 +52,12 @@ export const Player = () => {
     return player.score;
   }
 
+  // reset the score when restarting a new game
   const resetScore = () => {
     player.score = 0;
   }
 
+  // empty the picked fields array at end of the round
   const resetPickedFields = () => {
     player.fields = [];
   }

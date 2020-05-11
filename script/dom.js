@@ -1,18 +1,20 @@
 import { Player } from './player.js';
 import { gamePlay } from './gameplay.js';
+
 const state = {
     players: [Player(), Player()],
+
 }
 
 export const dom = ( function () {
-  
+
     // render: Menu when number is 1 (default)
     //         Gameplay when number is 2
     //         Result when number is 3
     const render = (number = 1) => {
       const views = document.querySelectorAll('section');
       views.forEach(( view, i ) => {
-        view.style.display = (i === number - 1) ? 'block' : 'none';
+        view.style.display = (i === number - 1) ? 'flex' : 'none';
       });
     }
 
@@ -50,15 +52,16 @@ export const dom = ( function () {
         getPlayersFromDom(event);
         render(2);
     }
+
     // Selecting gameBoard fields
     const boardField = document.querySelectorAll('td');
-
+    
     // gives player1: X
     //       player2: O
     const setX_O = (players) => {
       players.forEach((player, i) => {
           // setting X-image for players (since i equal 0 it will read 0.svg which is 'X' image) and O-image for player2
-          player.setX_OField(`no-repeat url("../image/${i}.svg")`);
+          player.setX_OField(`center no-repeat url("../image/${i}.svg")`);
           // setting 'X' for player1 and 'O' for player2
           i ? player.setX_O('O') : player.setX_O('X');
       });
@@ -85,9 +88,11 @@ export const dom = ( function () {
     }
 
     // since removeEventListener didn't work for the rest of unclicked fields when the game ends
-    // which cause double eventListenning for those fields when we play again we will create a custom event
-    // that auto-clicks the rest of unclicked fields before we render the new view
-    let autoClickEvent = new MouseEvent('click');
+    // which causes double eventListenning for those fields when we play again for that reason 
+    // we will create a custom event that auto-clicks the rest of unclicked fields before we render the new round
+    // Disclaimer: by following this approach the console will return errors because we are using once parameter
+    // but that won't hinder performance since we are making sure to only dispatsh what it wasn't dispatched by event listener
+    const autoClickEvent = new MouseEvent('click');
 
     // select the section that contains the result view
     const resultMessageHtml = document.querySelector('.end-result');
@@ -176,15 +181,15 @@ export const dom = ( function () {
       renderPlayersScore();
     }
 
-    // playing again while preserving username
+    // playing again while preserving username and score
     const playAgain = () => {
       playBtns[0].addEventListener('click', (e) => {
         emptyBoard();
         reRenderPlayerScore();
         render(2);
         resetPickedFields();
-        // reset the board properties (round counter, role , result and winner)
-        gamePlay.resetBoard(); 
+        // reset the board properties (turn counter, role , result and winner)
+        gamePlay.resetBoard();
         renderX_O();
         deleteRenderedResultMessage();
         renderResult();
@@ -216,15 +221,19 @@ export const dom = ( function () {
         render(1);
         resetPickedFields();
         // reset the board properties (round counter, role , result and winner)
-        gamePlay.resetBoard(); 
+        gamePlay.resetBoard();
         deleteRenderedResultMessage();
         startGame();
       })
     }
-// runs the program 
-    const runApp = () => { 
-      startGame(); 
-      playAgain(); newGame(); } 
 
-    return { runApp }; 
+    // runs the program
+    const runApp = () => {
+      startGame();
+      playAgain();
+      newGame();
+    }
+    
+
+    return { runApp };
 })();
