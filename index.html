@@ -3,34 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Tic Tac Toe</h1>
-        <div class="board">
-            <div class="row border-b">
-                <div class="col border-r block_0"></div>
-                <div class="col border-r block_1"></div>
-                <div class="col block_2"></div>
+    <h1>Tic Tac Toe</h1>
+    <section class="menu">
+        <form>
+            <div>
+                <label for="player1">Player 1</label>
+                <input type="text" name="player1" class="player" id="player1" value="Player 1">
             </div>
-            <div class="row border-b">
-                <div class="col border-r block_3"></div>
-                <div class="col border-r block_4"></div>
-                <div class="col block_5"></div>
+            <div>
+                <label for="player2">Player 2</label>
+                <input type="text" name="player2" class="player" id="player2" value="Player 2">
             </div>
-            <div class="row">
-                <div class="col border-r block_6"></div>
-                <div class="col border-r block_7"></div>
-                <div class="col block_8"></div>
+            <input type="submit" value="Start!" id="start-game">
+        </form>
+    </section>
+    <section class="game-play">
+        <div class="scoreboard">
+            <div>
+                <h2 id="player-1"></h2>
+                <h4 id="player-1-score"></h4>
+            </div>
+            <div>
+                <h2 id="player-2"></h2>
+                <h4 id="player-2-score"></h4>
             </div>
         </div>
-        <div class="other">
-            <h2 id="winner">Winner: </h2>
-            <button id="reset">Play Again?</button>
-        </div>
-    </div>
-    <script src="./style/script.js"></script>
+        <table class="gameboard">
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+        </table>
+    </section>
+    <section class="end-result">
+      <h3 id="winner"></h3>
+      <h1 id="result-message"></h1>
+      <div>
+          <button id="new-round"></button>
+          <button id="new-game"></button>
+      </div>
+    </section>
+    <!-- <script type="module" src="./script/menu.js"></script> -->
+    <script type="module" src="./script/player.js"></script>
+    <script type="module" src="./script/dom.js"></script>
 </body>
-</html>
+</html> 
