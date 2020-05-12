@@ -60,10 +60,9 @@
 This project is a Tic tac toe game that was done in an effort to learn about the use of javascript factory functions, with HTML and CSS.
 
 #### Screenshot
-![Screenshot](https://i.imgur.com/rkeqLiD.jpg)
-![Screenshot](https://i.imgur.com/rkeqLiD.jpg)
-![Screenshot](https://i.imgur.com/rkeqLiD.jpg)
-
+![image](https://user-images.githubusercontent.com/54140453/81751556-947eab00-94a7-11ea-9ea9-32337e2209f8.png)
+![image](https://user-images.githubusercontent.com/54140453/81751758-f4755180-94a7-11ea-8276-dcd304be1a36.png)
+![image](https://user-images.githubusercontent.com/54140453/81751786-06ef8b00-94a8-11ea-848a-5b63a2282906.png)
 ### Installation
 
 To get a local copy up and running follow these simple example steps.
