@@ -1,7 +1,7 @@
 {
   "name": "Tic-Tac-Toe-JS",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tic tac toe game, made with purely HTML/CSS and Javascript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,4 +23,3 @@
     "eslint-plugin-import": "^2.20.2"
   }
 }
-
