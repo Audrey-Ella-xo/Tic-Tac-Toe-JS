@@ -105,10 +105,10 @@ const dom = (function () {
   // render the winner of the game or draw in case of draw
   const renderWinDraw = (winner) => {
     if (winner) {
-      resultMessageHtml.children[0].appendChild(document.createTextNode(winner));
-      resultMessageHtml.children[1].appendChild(document.createTextNode('Won'));
+      resultMessageHtml.children[1].appendChild(document.createTextNode(winner));
+      resultMessageHtml.children[2].appendChild(document.createTextNode('Won'));
     } else {
-      resultMessageHtml.children[1].appendChild(document.createTextNode('Draw'));
+      resultMessageHtml.children[2].appendChild(document.createTextNode('Draw'));
     }
   };
 
@@ -176,9 +176,9 @@ const dom = (function () {
   // reset the result message before rendering a new one
   const deleteRenderedResultMessage = () => {
     // reset winner username
-    resultMessageHtml.children[0].innerHTML = '';
-    // reset win/draw message
     resultMessageHtml.children[1].innerHTML = '';
+    // reset win/draw message
+    resultMessageHtml.children[2].innerHTML = '';
   };
 
   // delete the previous score and set the new score
