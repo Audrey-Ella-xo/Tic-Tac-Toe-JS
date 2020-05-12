@@ -2,13 +2,12 @@
 import Player from './player.js'; // eslint-disable-line import/extensions
 import gamePlay from './gameplay.js'; // eslint-disable-line import/extensions
 
-const state = {
-  players: [Player(), Player()],
-
-};
-
 /* eslint func-names: ["error", "never"] */
 const dom = (function () {
+  const state = {
+    players: [Player(), Player()],
+  };
+
   // render: Menu when number is 1 (default)
   //         Gameplay when number is 2
   //         Result when number is 3
