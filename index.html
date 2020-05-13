@@ -3,34 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="container">
+    <section class="menu">
         <h1>Tic Tac Toe</h1>
-        <div class="board">
-            <div class="row border-b">
-                <div class="col border-r block_0"></div>
-                <div class="col border-r block_1"></div>
-                <div class="col block_2"></div>
+        <form>
+            <div>
+                <label for="player1">Player 1</label>
+                <input type="text" name="player1" class="player" id="player1" value="Player 1">
             </div>
-            <div class="row border-b">
-                <div class="col border-r block_3"></div>
-                <div class="col border-r block_4"></div>
-                <div class="col block_5"></div>
+            <div>
+                <label for="player2">Player 2</label>
+                <input type="text" name="player2" class="player" id="player2" value="Player 2">
             </div>
-            <div class="row">
-                <div class="col border-r block_6"></div>
-                <div class="col border-r block_7"></div>
-                <div class="col block_8"></div>
+            <input type="submit" value="Start!" id="start-game">
+        </form>
+    </section>
+    <section class="game-play">
+        <h1>Tic Tac Toe</h1>
+        <div class="scoreboard">
+            <div class="players-scoreboard"">
+                <h4 id="player-1-name"></h4>
+                <h2 id="player-1-score"></h2>
+            </div>
+            <div class="players-scoreboard">
+                <h4 id="player-2-name"></h4>
+                <h2 id="player-2-score"></h2>
             </div>
         </div>
-        <div class="other">
-            <h2 id="winner">Winner: </h2>
-            <button id="reset">Play Again?</button>
-        </div>
-    </div>
-    <script src="./style/script.js"></script>
+        <table class="game-board">
+          <tbody>
+            <tr>
+                <td class="game-br game-bb"></td>
+                <td class="game-bb"></td>
+                <td class="game-bl game-bb"></td>
+            </tr>
+            <tr>
+                <td class="game-br game-bb"></td>
+                <td class="game-bb"></td>
+                <td class="game-bl game-bb"></td>
+            </tr>
+            <tr>
+                <td class="game-br"></td>
+                <td></td>
+                <td class="game-bl"></td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+    <section class="end-result">
+      <h1>Tic Tac Toe</h1>
+      <h1 id="winner"></h1>
+      <h1 id="result-message"></h1>
+      <div>
+          <button class="result-btns" id="new-round">Play Again!</button>
+          <button class="result-btns"id="new-game">New Game</button>
+      </div>
+    </section>
+    <script type="module" src="./script/player.js"></script>
+    <script type="module" src="./script/gameplay.js"></script>
+    <script type="module" src="./script/dom.js"></script>
+    <script type="module" src="./script/app.js"></script>
 </body>
 </html>

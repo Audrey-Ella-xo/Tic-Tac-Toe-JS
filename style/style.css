@@ -1,45 +1,155 @@
-* {
-    margin: 0;
-    padding: 0;
+body {
+    box-sizing: border-box;
+    background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
+                rgba(241, 226, 226, 0.322),
+                rgba(248, 248, 248, 0.315)
+                ), url("/image/bgc.jpg") no-repeat center center fixed; /* only display once, center horizontal and vertical, dont let scroll change position. */
+  -webkit-background-size: cover;
+  -moz-background-size: cover; /* cover the whole html element. */
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-body {
-    background-color: beige;
+.menu,
+.game-play, .end-result {
+    border: 2px solid rgba(95, 86, 104, 0.842);
+    /* background-color: rgba(170, 203, 212, 0.178); */
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+}
+
+
+.menu {
+    margin: 25vh 25vw;
+    height: 20vh;
+    padding: 5vh 2vw;
+    justify-content: space-between;
+}
+
+form {
+    width: 19vw;
+    margin-top: 7vh;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+input {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 5px;
+}
+
+.player {
+    padding-left: 5px;
+}
+
+#start-game, .result-btns {
+    margin: 15px 0 0 13vw;
+    width: 80px;    
+    padding: 5px 12px;
+    border-radius: 5px;
+    height: 35px;
+    border: none;
+}
+
+.result-btns {
+    width: 100px;
+    margin: 15px 0 0 3vw;
+}
+
+#start-game:hover, .result-btns:hover{
+    background-color: rgb(139, 214, 233);
+    color: white;
+}
+
+form,
+h2,
+h4 {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-play {
+    height: 70vh;
+    margin: 15vh 20vw;
+    flex-direction: column;
+    align-items: center;
+}
+.scoreboard {
+    width: 100%;
+    display: inherit;
+    justify-content: space-around;
+
+}
+
+.players-scoreboard {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+}
+
+.players-scoreboard * {
+    margin: 0;
+}
+
+.players-scoreboard h2 {
+    font-size: 30px;
+}
+.game-board {
+    margin-top: 50px;
+    width: 45vw;
+    height: 45vh;
+}
+
+tr {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+td {
+    width: 15vw;
+    height: 15vh;
+}
+
+.game-bb {
+    border-bottom: 5px solid black ;
+}
+
+.game-br {
+    border-right: 5px solid black ;
+}
+
+.game-bl {
+    border-left: 5px solid black ;
+}
+
+.end-result {
     margin: auto;
+    margin-top: 20vh;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 40vh;
     text-align: center;
 }
 
-.container {
+#winner, #result-message {
+    font-size: 30px;
+}
+/* .end-result > div {
     margin-top: 50px;
-}
+    margin-left: -550px;
 
-.board {
-    margin: auto;
-    margin-top: 20px;
-    width: 360px;
-    height: 360px;
-    border: 1px solid black;
-}
-
-.row {
-    height: 120px;
-    display: flex;
-}
-
-.border-b {
-    border-bottom: 1px solid black;
-}
-
-.col {
-    height: 120px;
-    width: 120px;
-    line-height: 100px;
-}
-
-.border-r {
-    border-right: 1px solid black;
-}
-
-.col:hover {
-    background-color: cornsilk;
-}
+} */
