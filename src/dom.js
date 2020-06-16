@@ -191,16 +191,18 @@ const dom = (function () {
 
   // playing again while preserving username and score
   const playAgain = () => {
-    playBtns[0].addEventListener('click', () => {
-      emptyBoard();
-      reRenderPlayerScore();
-      render(2);
-      resetPickedFields();
-      // reset the board properties (turn counter, role , result and winner)
-      gamePlay.resetBoard();
-      renderXO();
-      deleteRenderedResultMessage();
-      renderResult();
+    document.addEventListener('click', () => {
+      if (e.target && e.target === playBtns[0]) {
+        emptyBoard();
+        reRenderPlayerScore();
+        render(2);
+        resetPickedFields();
+        // reset the board properties (turn counter, role , result and winner)
+        gamePlay.resetBoard();
+        renderXO();
+        deleteRenderedResultMessage();
+        renderResult();
+      }
     });
   };
 
@@ -221,17 +223,19 @@ const dom = (function () {
 
   // playing again without preserving anything
   const newGame = () => {
-    playBtns[1].addEventListener('click', () => {
-      emptyBoard();
-      deleteRendredUsernames();
-      deleteRendredScores();
-      resetScoreBoard();
-      render(1);
-      resetPickedFields();
-      // reset the board properties (round counter, role , result and winner)
-      gamePlay.resetBoard();
-      deleteRenderedResultMessage();
-      startGame();
+    document.addEventListener('click', () => {
+      if (e.target && e.target === playBtns[1]) {
+        emptyBoard();
+        deleteRendredUsernames();
+        deleteRendredScores();
+        resetScoreBoard();
+        render(1);
+        resetPickedFields();
+        // reset the board properties (round counter, role , result and winner)
+        gamePlay.resetBoard();
+        deleteRenderedResultMessage();
+        startGame();
+      }
     });
   };
 
