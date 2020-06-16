@@ -1,6 +1,8 @@
 // since http-server can't read js file without including .js
 import Player from './player.js'; // eslint-disable-line import/extensions
 import gamePlay from './gameplay.js'; // eslint-disable-line import/extensions
+import './0.svg';
+import './1.svg';
 
 /* eslint func-names: ["error", "never"] */
 const dom = (function () {
@@ -63,7 +65,7 @@ const dom = (function () {
     players.forEach((player, i) => {
       // setting X-image for players (since i equal 0 it will read 0.svg which is 'X' image)
       // and O-image for player2
-      player.setXOField(`center no-repeat url("../image/${i}.svg")`);
+      player.setXOField(`center no-repeat url("./${i}.svg")`);
       // setting 'X' for player1 and 'O' for player2
       /* eslint no-unused-expressions: ["error", { "allowTernary": true }] */
       i ? player.setXO('O') : player.setXO('X');
