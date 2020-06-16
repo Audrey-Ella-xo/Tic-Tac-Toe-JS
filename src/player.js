@@ -40,6 +40,7 @@ const Player = () => {
   // set score in case player won
   const setScore = () => {
     player.score += 1;
+    return player.score;
   };
 
   const getScore = () => player.score;
@@ -47,11 +48,13 @@ const Player = () => {
   // reset the score when restarting a new game
   const resetScore = () => {
     player.score = 0;
+    return player.score;
   };
 
   // empty the picked fields array at end of the round
   const resetPickedFields = () => {
     player.fields = [];
+    return player.fields;
   };
 
   return {
