@@ -191,7 +191,7 @@ const dom = (function () {
 
   // playing again while preserving username and score
   const playAgain = () => {
-    document.addEventListener('click', () => {
+    document.addEventListener('click', (e) => {
       if (e.target && e.target === playBtns[0]) {
         emptyBoard();
         reRenderPlayerScore();
@@ -223,7 +223,7 @@ const dom = (function () {
 
   // playing again without preserving anything
   const newGame = () => {
-    document.addEventListener('click', () => {
+    document.addEventListener('click', (e) => {
       if (e.target && e.target === playBtns[1]) {
         emptyBoard();
         deleteRendredUsernames();

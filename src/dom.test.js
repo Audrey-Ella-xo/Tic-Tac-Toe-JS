@@ -211,4 +211,4 @@ describe('testing runApp method that have 3 event listners', () => {
 
     expect(menu.style.display).toBe('flex');
   });
-}); 
+});
