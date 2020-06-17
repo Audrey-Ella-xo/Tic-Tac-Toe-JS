@@ -68,26 +68,33 @@ This project is a Tic tac toe game that was done in an effort to learn about the
 To get a local copy up and running follow these simple example steps.
 * Clone the project - git clone https://github.com/Audrey-Ella-xo/Tic-Tac-Toe-JS.git if you have git installed, or download it from github
 * open locally and Navigate the Directory. The directory has the following structure:
- 1. A script folder that holds the class and dom scripts respectively.
- 2. A style folder that holds the CSS style and the images folder.
+ 1. A src folder that holds all the development source files
+ 2. A dist folder that holds the production files
  3. A README file.
 
 ### Usage
+#### Install Dependencies
 
 ```
-  run live server
+  npm install
 ```
 
-### Run Linter
+#### Run the app
 
 ```
-  npx eslint .
+  npm run server
+```
+
+### Run Tests
+
+```
+  npm run test
 ```
 
 ### Built With
 This project was built using these technologies.
 * HTML5 and CSS3
-* Javascript
+* Javascript (Jest)
 
 <!-- CONTACT -->
 ## Authors

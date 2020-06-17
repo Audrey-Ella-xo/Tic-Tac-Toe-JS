@@ -67,6 +67,7 @@ const gamePlay = (function () {
     resetResult();
     resetWinner();
     resetRole();
+    return gameBoard;
   };
 
   // in case of win:  stores winner inside gameBoard and scores of each player
@@ -130,6 +131,7 @@ const gamePlay = (function () {
     nextTurn();
     // switch role
     switchRole();
+    return gameBoard;
   };
 
   return {
